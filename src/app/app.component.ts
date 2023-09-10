@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: ` <div class="app">Hello Angular!</div> `,
+  template: `
+    <div class="app">
+      <app-donut-list></app-donut-list>
+    </div>
+
+   `,
   styles: [
     `
       .app {
@@ -15,7 +20,21 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class AppComponent implements OnInit {
+  message!: string;
+  newMessage!: string;
+
+  constructor() {}
+
   ngOnInit() {
-    console.log('Hello World!');
+    this.message = 'Hello World!';
+  }
+
+  handleClick(event: Event) {
+    console.log(event);
+  }
+
+  handleInput(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.newMessage = value;
   }
 }
