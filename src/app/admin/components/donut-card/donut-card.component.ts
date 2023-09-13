@@ -22,6 +22,11 @@ import { Donut } from '../../models/donut.model';
     </div>
   `,
   styles: [
+    `
+      .donut-card {
+        display: flex;
+      }
+    `
   ]
 })
 export class DonutCardComponent {
