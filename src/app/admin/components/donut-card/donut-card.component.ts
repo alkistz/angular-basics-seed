@@ -4,22 +4,26 @@ import { Donut } from '../../models/donut.model';
 @Component({
   selector: 'app-donut-card',
   template: `
-    <div class="donut-card">
-      <img 
-        src="/assets/img/{{ donut.icon }}.svg"
-        [alt]="donut.name" 
-        class="donut-card-icon"
-      />
-      <div>
-        <p class="donut-card-name">
-          {{ donut.name }}
-        </p>
-        <p class="donut-card-price">
-          {{ donut.price }}
-        </p>
-      </div>
-      
+  <div 
+    class="donut-card"
+    [ngClass]="{
+      'donut-card-promo': donut.promo
+    }"
+  >
+    <img 
+      src="/assets/img/{{ donut.icon }}.svg"
+      [alt]="donut.name" 
+      class="donut-card-icon"
+    />
+    <div>
+      <p class="donut-card-name">
+        {{ donut.name }}
+      </p>
+      <p class="donut-card-price">
+        {{ donut.price }}
+      </p>
     </div>
+  </div>
   `,
   styles: [
     `
@@ -34,6 +38,11 @@ import { Donut } from '../../models/donut.model';
         &:hover {
           transform: translateY(-3px);
         }
+
+        &-promo {
+          border: 2px solid #eee;
+        }
+
         &-name {
           font-size: 16px;
         }
