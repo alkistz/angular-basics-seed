@@ -4,34 +4,33 @@ import { Donut } from '../../models/donut.model';
 @Component({
   selector: 'app-donut-card',
   template: `
-  <div 
-    class="donut-card"
+    <div
+      class="donut-card"
       [ngClass]="{
-      'donut-card-promo': donut.promo
-    }"
-  >
-    <img 
-      src="/assets/img/{{ donut.icon }}.svg"
-      [alt]="donut.name" 
-      class="donut-card-icon"
-    />
-    <div>
-      <p class="donut-card-name">
-        {{ donut.name }}
-        <ng-container [ngSwitch]="donut.promo">
-          <span class="donut-card-label">
-            <ng-template [ngSwitchCase]="'new'"> NEW </ng-template>
-            <ng-template [ngSwitchCase]="'limited'"> Limited </ng-template>
-            <ng-template ngSwitchDefault> Nothing special </ng-template>
-
-          </span>
-        </ng-container>
-      </p>
-      <p class="donut-card-price">
-        {{ donut.price / 100 | currency: 'USD' }}
-      </p>
+        'donut-card-promo': donut.promo
+      }"
+    >
+      <img
+        src="/assets/img/{{ donut.icon }}.svg"
+        [alt]="donut.name"
+        class="donut-card-icon"
+      />
+      <div>
+        <p class="donut-card-name">
+          {{ donut.name }}
+          <ng-container [ngSwitch]="donut.promo">
+            <span class="donut-card-label">
+              <ng-template [ngSwitchCase]="'new'"> NEW </ng-template>
+              <ng-template [ngSwitchCase]="'limited'"> Limited </ng-template>
+              <ng-template ngSwitchDefault> Nothing special </ng-template>
+            </span>
+          </ng-container>
+        </p>
+        <p class="donut-card-price">
+          {{ donut.price / 100 | currency : 'USD' }}
+        </p>
+      </div>
     </div>
-  </div>
   `,
   styles: [
     `
@@ -61,7 +60,7 @@ import { Donut } from '../../models/donut.model';
           padding: 0 4px;
           margin-left: 5px;
           font-size: 12px;
-          color: #c14583
+          color: #c14583;
         }
         &-price {
           font-size: 14px;
@@ -73,10 +72,9 @@ import { Donut } from '../../models/donut.model';
           margin-right: 10px;
         }
       }
-    `
-  ]
+    `,
+  ],
 })
 export class DonutCardComponent {
   @Input() donut!: Donut;
-
 }
