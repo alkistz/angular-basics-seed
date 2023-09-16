@@ -5,15 +5,22 @@ import { Donut } from '../../models/donut.model';
   selector: 'app-donut-list',
   template: `
    <div>
-    <app-donut-card [donut]="donuts[0]"></app-donut-card>
-    <app-donut-card [donut]="donuts[1]"></app-donut-card>
-    <app-donut-card [donut]="donuts[2]"></app-donut-card>
-    
+    <ng-container *ngIf="donuts.length; else nothing; trackBy: trackById">
+      <app-donut-card
+        *ngFor="let donut of donuts"
+        [donut]="donut"
+      ></app-donut-card>
+    </ng-container>
+
+    <ng-template #nothing>
+      <p>No Donuts here...</p>
+    </ng-template>
    </div>
   `,
   styles: [
   ]
 })
+
 export class DonutListComponent implements OnInit {
   donut!: Donut;
   donuts!: Donut[];
@@ -27,6 +34,7 @@ export class DonutListComponent implements OnInit {
         name: 'Just chocolate',
         icon: 'just-chocolate',
         price: 119,
+        promo: 'limited',
         description: 'For the pure chochoholic'
       },
       {
@@ -34,7 +42,7 @@ export class DonutListComponent implements OnInit {
         name: 'Glazed Fudge',
         icon: 'glazed-fudge',
         price: 129,
-        promo: true,
+        promo: 'new',
         description: 'Whatever dude'
       },
       {
@@ -42,8 +50,26 @@ export class DonutListComponent implements OnInit {
         name: 'Caramel Swirl',
         icon: 'caramel-swirl',
         price: 129,
-        description: 'whooooot '
+        description: 'whooooot'
+      },
+      {
+        id: '129iv2',
+        name: 'Sour Supreme',
+        icon: 'sour-supreme',
+        price: 139,
+        description: 'For the sour advocate'
+      },
+      {
+        id: 'hun9w7',
+        name: 'Zesty Lemon',
+        icon: 'zesty-lemon',
+        price: 139,
+        description: 'Delicious lucious lemon'
       },
     ];
+  }
+
+  trackById(index: number, value: Donut) {
+    return value.id;
   }
 }
