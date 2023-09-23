@@ -9,18 +9,17 @@ import { Component, OnInit } from '@angular/core';
       </header>
       <app-donut-single></app-donut-single>
     </div>
-
-   `,
+  `,
   styles: [
     `
       .app {
-       background: #fff;
-       border-radius: 8px;
-       max-width: 400px;
-       width: 94%;
-       margin: 25px auto;
-       padding: 25px;
-       border: 4px solid #ef9fc7;
+        background: #fff;
+        border-radius: 8px;
+        max-width: 400px;
+        width: 94%;
+        margin: 25px auto;
+        padding: 25px;
+        border: 4px solid #ef9fc7;
       }
 
       .header {

@@ -1,1 +1,41 @@
-{}
+{
+  "donuts": [
+    {
+      "id": "aadwfd",
+      "name": "Just chocolate",
+      "icon": "just-chocolate",
+      "price": 119,
+      "promo": "limited",
+      "description": "For the pure chochoholic"
+    },
+    {
+      "id": "dfsfs",
+      "name": "Glazed Fudge",
+      "icon": "glazed-fudge",
+      "price": 129,
+      "promo": "new",
+      "description": "Whatever dude"
+    },
+    {
+      "id": "fghfhf",
+      "name": "Caramel Swirl",
+      "icon": "caramel-swirl",
+      "price": 129,
+      "description": "whooooot"
+    },
+    {
+      "id": "129iv2",
+      "name": "Sour Supreme",
+      "icon": "sour-supreme",
+      "price": 139,
+      "description": "For the sour advocate"
+    },
+    {
+      "id": "hun9w7",
+      "name": "Zesty Lemon",
+      "icon": "zesty-lemon",
+      "price": 139,
+      "description": "Delicious lucious lemon"
+    }
+  ]
+}
